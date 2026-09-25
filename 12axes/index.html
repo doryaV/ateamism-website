@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Ateamism 中文 12Axes：288 题、12 个政治价值维度。">
+  <title>12Axes 中文 288 题 — Ateamism</title>
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="questions-data.js" defer></script>
+  <script src="ideologies.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="../">Ateamism</a>
+    <span class="top-label">12AXES / 中文长版</span>
+    <button class="text-button" id="restart-top" type="button">重新开始</button>
+  </header>
+
+  <main>
+    <section class="screen intro-screen" id="intro">
+      <p class="micro">POLITICAL COORDINATE INSTRUMENT / 288 QUESTIONS</p>
+      <h1><span>12</span>Axes</h1>
+      <div class="intro-grid">
+        <div>
+          <p class="lead">十二条轴，二百八十八个判断。它不是身份认证，而是一台用来观察自身政治直觉的测量装置。</p>
+          <button class="primary" id="start" type="button">开始完整测试</button>
+          <button class="secondary" id="resume" type="button" hidden>继续上次进度</button>
+        </div>
+        <ol class="axis-index" id="axis-index"></ol>
+      </div>
+      <div class="notice">
+        <p><b>答题说明</b>　每题有七档选项。题目顺序会随机打乱；进度仅保存在当前浏览器中。</p>
+        <p><b>来源与许可</b>　题库与计分逻辑改编自 <a href="https://github.com/politicaltests/politicaltests.github.io/tree/main/12axes" target="_blank" rel="noopener">PoliticalTests 的 12Axes 项目</a>，依 <a href="LICENSE">MIT License</a> 使用、翻译与再发布。中文翻译由 Ateamism 整理；英文原文可在每题下方展开核对。</p>
+      </div>
+    </section>
+
+    <section class="screen quiz-screen" id="quiz" hidden>
+      <div class="progress-head">
+        <p class="micro">ASSESSMENT IN PROGRESS</p>
+        <p><span id="current">1</span> / 288</p>
+      </div>
+      <div class="progress-track"><span id="progress"></span></div>
+      <article class="question-card">
+        <p class="question-number" id="question-code">Q / 001</p>
+        <h2 id="question-zh"></h2>
+        <details><summary>查看英文原文</summary><p id="question-en"></p></details>
+      </article>
+      <div class="answers" id="answers"></div>
+      <button class="back" id="back" type="button">← 上一题</button>
+    </section>
+
+    <section class="screen results-screen" id="results" hidden>
+      <p class="micro">RESULT / TWELVE COORDINATES</p>
+      <h1>你的坐标</h1>
+      <p class="result-note">百分比沿用原版长测验算法：每条轴以 50 为中点，根据 24 道题累计加减，理论范围为 2–98。</p>
+      <div class="result-list" id="result-list"></div>
+      <article class="closest" id="closest" hidden>
+        <p class="micro">ORIGINAL FOUR-AXIS NEAREST MATCH</p>
+        <h2 id="closest-name"></h2>
+        <p id="closest-desc"></p>
+        <a id="closest-link" target="_blank" rel="noopener">查看原词条 ↗</a>
+      </article>
+      <div class="result-actions">
+        <button class="primary" id="copy-result" type="button">复制结果摘要</button>
+        <button class="secondary" id="restart" type="button">重新测试</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>ATEAMISM.COM</span><span>REWRITE THE RULES / 12AXES</span></footer>
+</body>
+</html>
